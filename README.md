@@ -81,24 +81,3 @@ src/
 ```
 
 ---
-
-## 🚀 How to Run the Project Locally
-
-To test and review the code on your local machine:
-
-1. **Clone the repository** and navigate to the folder:
-   ```bash
-   cd Cartify
-   ```
-2. **Install the required dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Start the Vite development server**:
-   ```bash
-   npm run dev
-   ```
-4. **View the app**: Open your browser and go to `http://localhost:5173`.
-
----
-*Developed as a comprehensive demonstration of frontend React capabilities.*
