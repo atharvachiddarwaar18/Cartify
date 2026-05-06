@@ -5,16 +5,16 @@ function ProductCard({ product }) {
   return (
     <div className="product-card">
       <div className="product-image-container">
-        <img src={"https://unsplash.com/s/photos/product"} alt={"Headphones"} className="product-image" />
+        <img src={product.image} alt={product.title} className="product-image" />
       </div>
       <div className="product-info">
-        <p className="product-category">{"Music"}</p>
-        <h3 className="product-title" title={"Headphones"}>
-            Headphones
+        <p className="product-category">{product.category}</p>
+        <h3 className="product-title" title={product.title}>
+          {product.title.length > 40 ? `${product.title.substring(0, 40)}...` : product.title}
         </h3>
         <div className="product-price-rating">
-          <span className="product-price">$2400</span>
-          <span className="product-rating">⭐ 4.8</span>
+          <span className="product-price">${product.price.toFixed(2)}</span>
+          <span className="product-rating">⭐ {product.rating.rate}</span>
         </div>
         <div className="product-actions">
           <button className="btn-add-cart">Add to Cart</button>
