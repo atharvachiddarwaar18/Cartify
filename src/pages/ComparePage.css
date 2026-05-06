@@ -3,3 +3,160 @@
   padding: 5rem 2rem;
   color: var(--text-main);
 }
+
+.compare-page-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.compare-page-container h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.compare-grid {
+  display: grid;
+  gap: 1.5rem;
+  overflow-x: auto; 
+}
+
+.compare-column {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.btn-remove-compare {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.btn-remove-compare:hover {
+  color: #ef4444;
+}
+
+.compare-image-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.compare-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.compare-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  height: 3em; 
+  overflow: hidden;
+}
+
+.compare-category {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.compare-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background-color: #f9fafb;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+
+.highlight-price {
+  border-color: #10b981; 
+  background-color: #ecfdf5;
+}
+
+.highlight-price .stat-value {
+  color: #10b981;
+}
+
+.highlight-rating {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+.highlight-rating .stat-value {
+  color: #f59e0b;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.price-badge {
+  background-color: #10b981;
+}
+
+.rating-badge {
+  background-color: #f59e0b;
+}
+
+.compare-action {
+  margin-top: auto; 
+  padding-top: 1rem;
+}
+
+.btn-add-cart-large {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-add-cart-large:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-compare.active {
+  background-color: #ef4444; 
+  border-color: #ef4444;
+  color: white;
+}
+.btn-compare.active:hover {
+  background-color: #dc2626;
+}

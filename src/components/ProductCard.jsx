@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CompareContext } from '../context/CompareContext';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
+  const { toggleCompare, isInCompareList } = useContext(CompareContext);
+  const isCompared = isInCompareList(product.id);
+
   return (
     <div className="product-card">
       <div className="product-image-container">
@@ -18,7 +22,12 @@ function ProductCard({ product }) {
         </div>
         <div className="product-actions">
           <button className="btn-add-cart">Add to Cart</button>
-          <button className="btn-compare">Compare</button>
+          <button 
+            className={`btn-compare ${isCompared ? 'active' : ''}`}
+            onClick={() => toggleCompare(product)}
+          >
+            {isCompared ? 'Remove Compare' : 'Compare'}
+          </button>
         </div>
       </div>
     </div>

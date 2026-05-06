@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ComparePage from './pages/ComparePage';
+import { CompareProvider } from './context/CompareContext';
 
 function App() {
   return (
+    <CompareProvider>
     <Router>
       <div className="app-container">
         <Navbar/>
@@ -18,6 +20,7 @@ function App() {
         </main>
       </div>
     </Router>
+    </CompareProvider>
   );
 }
 
