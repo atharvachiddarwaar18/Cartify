@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import ComparePage from './pages/ComparePage';
 import { CompareProvider } from './context/CompareContext';
 import ProductDetail from './pages/ProductDetal';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/compare" element={<ComparePage/>}/>
             <Route path="/product/:id" element={<ProductDetail/>} />
-            <Route path="/cart" element={<div style={{padding: '2rem'}}>Cart Page (Coming Soon)</div>} />
+            <Route path="/cart" element={<CartPage/>} />
           </Routes>
         </main>
       </div>
