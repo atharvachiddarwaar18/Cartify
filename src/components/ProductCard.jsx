@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CompareContext } from '../context/CompareContext';
 import './ProductCard.css';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   const { toggleCompare, isInCompareList } = useContext(CompareContext);
@@ -8,9 +9,11 @@ function ProductCard({ product }) {
 
   return (
     <div className="product-card">
-      <div className="product-image-container">
-        <img src={product.image} alt={product.title} className="product-image" />
-      </div>
+      <Link to={`/product/${product.id}`} >
+        <div className="product-image-container">
+          <img src={product.image} alt={product.title} className="product-image" />
+        </div>
+      </Link>
       <div className="product-info">
         <p className="product-category">{product.category}</p>
         <h3 className="product-title" title={product.title}>
