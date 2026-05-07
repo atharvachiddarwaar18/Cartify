@@ -65,6 +65,25 @@ function CartPage() {
             </div>
           ))}
         </div>
+        
+        <div className="cart-summary">
+          <h3>Order Summary</h3>
+          <div className="summary-row">
+            <span>Subtotal</span>
+            <span>${cartTotal.toFixed(2)}</span>
+          </div>
+          <div className="summary-row">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div className="summary-total">
+            <span>Total</span>
+            <span>${cartTotal.toFixed(2)}</span>
+          </div>
+          <button className="btn-checkout" onClick={() => alert("Checkout flow coming soon!")}>
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
     </div>
   );
