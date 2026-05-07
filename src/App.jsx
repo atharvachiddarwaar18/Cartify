@@ -7,6 +7,7 @@ import { CompareProvider } from './context/CompareContext';
 import ProductDetail from './pages/ProductDetal';
 import CartPage from './pages/CartPage';
 import { CartProvider } from './context/CartContext';
+import Toast from './components/Toast';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Navbar/>
+        <Toast/>
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home/>}/>

@@ -7,15 +7,20 @@ export const CartProvider = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [toastMessage, setToastMessage] = useState(null);
 
-  // Function to add a product to the cart
+  const showToast = (message) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
+
   const addToCart = (product) => {
     setCartItems(prevItems => {
-      // Check if the item is already in the cart
       const existingItem = prevItems.find(item => item.id === product.id);
       
       if (existingItem) {
-        // If it exists, just increase the quantity by 1
         return prevItems.map(item => 
           item.id === product.id 
             ? { ...item, quantity: item.quantity + 1 }
@@ -25,6 +30,7 @@ export const CartProvider = ({ children }) => {
       
       return [...prevItems, { ...product, quantity: 1 }];
     });
+    showToast(`Added ${product.title.substring(0, 20)}... to cart!`);
   };
 
   // Function to completely remove an item from the cart
@@ -46,7 +52,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity, toastMessage, showToast }}>
       {children}
     </CartContext.Provider>
   );
