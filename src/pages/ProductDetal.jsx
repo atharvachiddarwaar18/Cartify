@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProductDetail.css';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 function ProductDetail() {
 
   const { id } = useParams(); 
-  
+  const { addToCart } = useContext(CartContext);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -66,6 +68,7 @@ function ProductDetail() {
           <div className="detail-actions">
             <button 
               className="btn-add-cart-large"
+              onClick={() => addToCart(product)}  
             >
               Add to Cart
             </button>
