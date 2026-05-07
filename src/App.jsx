@@ -6,9 +6,11 @@ import ComparePage from './pages/ComparePage';
 import { CompareProvider } from './context/CompareContext';
 import ProductDetail from './pages/ProductDetal';
 import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
+    <CartProvider>
     <CompareProvider>
     <Router>
       <div className="app-container">
@@ -24,6 +26,7 @@ function App() {
       </div>
     </Router>
     </CompareProvider>
+    </CartProvider>
   );
 }
 

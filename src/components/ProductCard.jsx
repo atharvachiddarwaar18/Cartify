@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { CompareContext } from '../context/CompareContext';
 import './ProductCard.css';
+import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   const { toggleCompare, isInCompareList } = useContext(CompareContext);
   const isCompared = isInCompareList(product.id);
+  
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-card">
@@ -24,7 +27,10 @@ function ProductCard({ product }) {
           <span className="product-rating">⭐ {product.rating.rate}</span>
         </div>
         <div className="product-actions">
-          <button className="btn-add-cart">Add to Cart</button>
+          <button className="btn-add-cart"
+          onClick={() => addToCart(product)}
+            >Add to Cart
+            </button>
           <button 
             className={`btn-compare ${isCompared ? 'active' : ''}`}
             onClick={() => toggleCompare(product)}
